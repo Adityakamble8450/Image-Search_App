@@ -13,7 +13,7 @@ export function ParallaxScroll({ images, className, loader, saved, setSeved }) {
       for (let i = 0; i < saved.length; i++) {
         if (saved[i].id === img.id) {
           flag = false;
-          toast.info('Image already saved', {
+          toast.info("Image already saved", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -23,7 +23,7 @@ export function ParallaxScroll({ images, className, loader, saved, setSeved }) {
             progress: undefined,
             theme: "colored",
             transition: Bounce,
-            });
+          });
           //react toastif
           break;
         }
@@ -31,7 +31,7 @@ export function ParallaxScroll({ images, className, loader, saved, setSeved }) {
     }
     if (flag) {
       setSeved([...saved, img]);
-      toast.success('Image Saved Succesfully', {
+      toast.success("Image Saved Succesfully", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -41,7 +41,7 @@ export function ParallaxScroll({ images, className, loader, saved, setSeved }) {
         progress: undefined,
         theme: "colored",
         transition: Bounce,
-        });
+      });
     }
   };
 
@@ -59,7 +59,7 @@ export function ParallaxScroll({ images, className, loader, saved, setSeved }) {
 
   return (
     <>
-    <ToastContainer/>
+      <ToastContainer />
       <div className={cn(" items-start w-full", className)} ref={gridRef}>
         {loader ? (
           <Loader />
@@ -71,12 +71,14 @@ export function ParallaxScroll({ images, className, loader, saved, setSeved }) {
             <div className="grid gap-10 relative ">
               {firstPart.map((el, idx) => (
                 <motion.div style={{ y: translateFirst }} key={"grid-1" + idx}>
-                  <span className=" absolute text-2xl right-0 m-1 text-white -translate-x-0 cursor-pointer hover:text-green-300">
+                  <span
+                    onClick={() => handleSave(el)}
+                    className=" absolute text-2xl right-0 m-1 text-white -translate-x-0 cursor-pointer hover:text-green-300"
+                  >
                     <BsFillSaveFill />
                   </span>
                   <img
                     src={el.src.original}
-                    onClick={() => handleSave(el)}
                     className="h-80 w-full object-cover object-left-top img rounded-lg gap-10 !m-0 !p-0"
                     height="400"
                     width="400"
@@ -88,12 +90,14 @@ export function ParallaxScroll({ images, className, loader, saved, setSeved }) {
             <div className="grid gap-10 relative">
               {secondPart.map((el, idx) => (
                 <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-                  <span className=" absolute text-2xl right-0 m-1 text-white -translate-x-0 cursor-pointer hover:text-green-300">
+                  <span
+                    onClick={() => handleSave(el)}
+                    className=" absolute text-2xl right-0 m-1 text-white -translate-x-0 cursor-pointer hover:text-green-300"
+                  >
                     <BsFillSaveFill />
                   </span>
                   <img
                     src={el.src.original}
-                    onClick={() => handleSave(el)}
                     className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                     height="400"
                     width="400"
@@ -105,12 +109,14 @@ export function ParallaxScroll({ images, className, loader, saved, setSeved }) {
             <div className="grid gap-10 relative">
               {thirdPart.map((el, idx) => (
                 <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-                  <span className=" absolute text-2xl right-0 m-1 text-white -translate-x-0 cursor-pointer hover:text-green-300">
+                  <span
+                    onClick={() => handleSave(el)}
+                    className=" absolute text-2xl right-0 m-1 text-white -translate-x-0 cursor-pointer hover:text-green-300"
+                  >
                     <BsFillSaveFill />
                   </span>
                   <img
                     src={el.src.original}
-                    onClick={() => handleSave(el)}
                     className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0"
                     height="400"
                     width="400"

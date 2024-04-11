@@ -14,10 +14,9 @@ const Navabar = ({queary , setqueary}) => {
     { title: "Tokyo" },
     { title: "Dubai" },
   ];
-
   return (
     <div className="w-full flex  flex-col items-center">
-      <div className="mb-3 md:w-[60vw] flex gap-2 ite items-center justify-center flex-wrap">
+      <div className="mb-3 md:w-[60vw] w-full flex gap-2 ite items-center justify-center flex-wrap">
         <div className="relative mb-4 flex w-3/4 flex-wrap items-stretch">
           <input
             type="search"
